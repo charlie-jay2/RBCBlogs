@@ -22,9 +22,12 @@
     "express-session": "^1.17.3",
     "jsonwebtoken": "^9.0.0",
     "method-override": "^3.0.0",
-    "mongoose": "^7.0.3"
+    "mongoose": "^7.0.3",
+    "serverless-http": "^3.2.0"
   },
   "devDependencies": {
-    "nodemon": "^2.0.22"
+    "nodemon": "^2.0.22",
+    "serverless": "^4.4.7",
+    "serverless-offline": "^14.3.3"
   }
 }
