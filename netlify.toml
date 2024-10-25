@@ -1,0 +1,9 @@
+[build]
+  command = "npm install && npm run build"  # Adjust as needed
+  publish = "public"  # Directory to publish static files
+  functions = "netlify/functions"  # Directory for Netlify functions
+
+[[redirects]]
+  from = "/*"
+  to = "/.netlify/functions/app"
+  status = 200

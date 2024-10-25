@@ -1,0 +1,27 @@
+service: rbcb-blogs  # Your service name
+
+provider:
+  name: aws
+  runtime: nodejs18.x  # Specify your Node.js version
+  region: us-east-1     # Change to your preferred region
+  environment:
+    MONGODB_URI: ${env:MONGODB_URI}  # Accessing MongoDB URI from environment variables
+
+plugins:
+  - serverless-offline  # Enables offline support
+
+functions:
+  app:
+    handler: index.handler  # Path to your Express app handler
+    events:
+      - http:
+          path: /
+          method: any  # This can be adjusted to specify allowed methods
+      - http:
+          path: '{proxy+}'
+          method: any  # Allows all methods for proxy routes
+
+# Custom settings (optional)
+custom:
+  serverless-offline:
+    port: 3000  # Change this if you want to use a different port
